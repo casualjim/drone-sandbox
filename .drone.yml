@@ -1,0 +1,20 @@
+workspace:
+  base: /go
+  path: src/github.com/casualjim/drone-sandbox
+
+pipeline:
+   envcheck:
+    environment:
+      DOCKER_HOST: tcp://127.0.0.1:2375
+    image: docker:latest
+    pull: true
+    commands:
+      - env
+      - docker ps
+      - docker images
+
+services:
+  dind:
+    image: docker:1.12-dind
+    privileged: true
+    pull: true
