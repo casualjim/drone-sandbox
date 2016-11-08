@@ -26,7 +26,6 @@ pipeline:
     image: casualjim/drone-docker
     privileged: true
     repo: casualjim/drone-sandbox
-    context: ./dist
     dockerfile: ./Dockerfile
     force_tag: true
     build_args:
