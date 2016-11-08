@@ -12,6 +12,13 @@ pipeline:
       - env
       - docker ps
       - docker images
+
+  compile:
+    environment:
+      DOCKER_HOST: tcp://127.0.0.1:2375
+    image: golang:1.7
+    pull: true
+    commands:
       - CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -tags netgo
 
 
