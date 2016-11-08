@@ -40,7 +40,6 @@ pipeline:
     when:
       event: tag
       branch: master
-      repo: casualjim/drone-sandbox
 
 services:
   dind:
